@@ -1,11 +1,34 @@
+import React, { Fragment, useEffect } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/home";
+import CreateProject from "./components/createProject";
+import UpdateProject from "./components/updateProject";
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-            <header className="App-header">Project Manager App</header>
-        </div>
+        <Router>
+            <Fragment>
+                {/* <Navbar /> */}
+                <Route exact path="/" component={Home} />
+                <section className="container">
+                    {/* <Alert /> */}
+                    <Switch>
+                        <Route
+                            exact
+                            path="/createproject"
+                            component={CreateProject}
+                        />
+                        <Route
+                            exact
+                            path="/updateproject"
+                            component={UpdateProject}
+                        />
+                    </Switch>
+                </section>
+            </Fragment>
+        </Router>
     );
-}
+};
 
 export default App;
