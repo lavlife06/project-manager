@@ -11,10 +11,11 @@ const initialState = {
 const projectReducer = (state = initialState, action) => {
     const { type, payload } = action;
     switch (type) {
-        // case CREATE_PROJECT:
-        //     return {
-        //         ...state,
-        //     };
+        case CREATE_PROJECT:
+            return {
+                ...state,
+                projects: [payload, ...state.projects],
+            };
         default:
             return state;
     }

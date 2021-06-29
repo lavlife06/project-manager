@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/home";
 import CreateProject from "./components/createProject";
 import UpdateProject from "./components/updateProject";
+import ProjectForm from "./components/projectForm";
+import "antd/dist/antd.css";
+import { Redirect } from "react-router-dom";
 
 const App = () => {
     return (
@@ -17,7 +20,7 @@ const App = () => {
                         <Route
                             exact
                             path="/createproject"
-                            component={CreateProject}
+                            component={ProjectForm}
                         />
                         <Route
                             exact
