@@ -5,6 +5,7 @@ import { Form, Input, InputNumber, Button, Upload } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import { CREATE_PROJECT } from "../redux/actions/types";
+import { uuid } from "uuidv4";
 
 const ProjectForm = () => {
     const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const ProjectForm = () => {
         // console.log(values);
 
         let projectObj = {
+            projectId: uuid(),
             title: values.title,
             description: values.description,
             images: [],
