@@ -4,15 +4,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/home";
 import CreateProject from "./components/createProject";
 import UpdateProject from "./components/updateProject";
-import ProjectForm from "./components/projectForm";
+import Project from "./components/project";
+import Navbar from "./components/navbar";
+
+// import ProjectForm from "./components/projectForm";
 import "antd/dist/antd.css";
-import { Redirect } from "react-router-dom";
 
 const App = () => {
     return (
         <Router>
             <Fragment>
-                {/* <Navbar /> */}
+                <Navbar />
                 <Route exact path="/" component={Home} />
                 <section className="container">
                     {/* <Alert /> */}
@@ -20,13 +22,14 @@ const App = () => {
                         <Route
                             exact
                             path="/createproject"
-                            component={ProjectForm}
+                            component={CreateProject}
                         />
                         <Route
                             exact
                             path="/updateproject"
                             component={UpdateProject}
                         />
+                        <Route exact path="/viewproject" component={Project} />
                     </Switch>
                 </section>
             </Fragment>
